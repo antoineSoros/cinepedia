@@ -1,4 +1,5 @@
 import {Component, Input, OnInit, } from '@angular/core';
+import {OmdbapiService} from '../services/omdbapi.service';
 
 
 
@@ -11,11 +12,15 @@ import {Component, Input, OnInit, } from '@angular/core';
 export class SeekComponent implements OnInit {
   @Input() movieTitle: string;
 
-  constructor() {
+  constructor(private omdbapi: OmdbapiService) {
 
   }
 
   ngOnInit() {
   }
 
+
+  onSearch() {
+this.omdbapi.searchMovie(this.movieTitle);
+  }
 }
