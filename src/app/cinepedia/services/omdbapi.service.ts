@@ -11,6 +11,6 @@ export class OmdbapiService {
   constructor(private http: HttpClient) { }
 
 searchMovie(searchValue: string) {
-  this.http.get(`http://www.omdbapi.com/?t=${searchValue}&apikey=${token.apiKey}` );
+  this.http.get(`http://www.omdbapi.com/?t=${searchValue}&apikey=${token.apiKey}` ).subscribe(value => {console.log(value); });
 }
 }
