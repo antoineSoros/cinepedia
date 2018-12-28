@@ -2,7 +2,6 @@ import {Component, Input, OnInit, } from '@angular/core';
 import {OmdbapiService} from '../services/omdbapi.service';
 import {Movie} from '../shared/models/movie.models';
 import {Subscription} from 'rxjs';
-import {OmdbapiModels} from '../shared/models/omdbapi.models';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {HttpErrorResponse} from '@angular/common/http';
 
@@ -25,18 +24,20 @@ export class SeekComponent implements OnInit {
 
 
   onSearch(): Subscription {
-return this.omdbapi.searchMovie(this.movieTitle).subscribe((omdbapiModels: OmdbapiModels) => {
-  this.movie = omdbapiModels.movie;
-//   this.movie.actors = omdbapiModels.movie.actors;
-//   this.movie.awards = omdbapiModels.movie.awards;
-//   this.movie.director = omdbapiModels.movie.director;
-//   this.movie.genre = omdbapiModels.movie.genre;
-//   this.movie.plot = omdbapiModels.movie.plot;
-//   this.movie.year = omdbapiModels.movie.year;
-//   this.movie.poster = omdbapiModels.movie.poster;
+return this.omdbapi.searchMovie(this.movieTitle).subscribe((apiMovie: Movie) => {
+
+  this.movie.Title = apiMovie.Title;
+  this.movie.Actors = apiMovie.Actors;
+   this.movie.Awards = apiMovie.Awards;
+   this.movie.Director = apiMovie.Director;
+   this.movie.Genre = apiMovie.Genre;
+   this.movie.Plot = apiMovie.Plot;
+   this.movie.Year = apiMovie.Year;
+   this.movie.Poster = apiMovie.Poster;
+
  },
   (error: HttpErrorResponse) => {this.snackbar.open(`Sorry we can't find this movie ${this.movieTitle}`, `Retry`
-  ).onAction().subscribe();
+  ).onAction().subscribe(() => this.onSearch());
 }
 );
 

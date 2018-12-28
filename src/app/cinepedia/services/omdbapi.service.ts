@@ -14,8 +14,8 @@ export class OmdbapiService {
 
   constructor(private http: HttpClient) { }
 
-searchMovie(searchValue: string): Observable<OmdbapiModels> {
-  return this.http.get<OmdbapiModels>(`http://www.omdbapi.com/?t=${searchValue}&apikey=${token.apiKey}` )
+searchMovie(searchValue: string): Observable<Movie >{
+  return this.http.get<Movie>(`http://www.omdbapi.com/?t=${searchValue}&apikey=${token.apiKey}` )
    ;
 }
 }

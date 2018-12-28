@@ -5,7 +5,7 @@ import {SharedModule} from '../shared/shared.module';
 import {SeekComponent} from './seek/seek.component';
 
 @NgModule({
-  declarations: [CinepediaComponent, SeekComponent, ],
+  declarations: [CinepediaComponent, SeekComponent,  ],
   imports: [
     CommonModule,
     SharedModule,

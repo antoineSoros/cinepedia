@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Movie} from './shared/models/movie.models';
 
 @Component({
   selector: 'app-cinepedia',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cinepedia.component.css']
 })
 export class CinepediaComponent implements OnInit {
-
-  constructor() { }
+public movie: Movie;
+  constructor() {
+this.movie = new Movie();
+  }
 
   ngOnInit() {
   }
