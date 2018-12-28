@@ -26,15 +26,15 @@ export class SeekComponent implements OnInit {
 
   onSearch(): Subscription {
 return this.omdbapi.searchMovie(this.movieTitle).subscribe((omdbapiModels: OmdbapiModels) => {
-  this.movie.title = omdbapiModels.movie.title;
-  this.movie.actors = omdbapiModels.movie.actors;
-  this.movie.awards = omdbapiModels.movie.awards;
-  this.movie.director = omdbapiModels.movie.director;
-  this.movie.genre = omdbapiModels.movie.genre;
-  this.movie.plot = omdbapiModels.movie.plot;
-  this.movie.year = omdbapiModels.movie.year;
-  this.movie.poster = omdbapiModels.movie.poster;
-},
+  this.movie = omdbapiModels.movie;
+//   this.movie.actors = omdbapiModels.movie.actors;
+//   this.movie.awards = omdbapiModels.movie.awards;
+//   this.movie.director = omdbapiModels.movie.director;
+//   this.movie.genre = omdbapiModels.movie.genre;
+//   this.movie.plot = omdbapiModels.movie.plot;
+//   this.movie.year = omdbapiModels.movie.year;
+//   this.movie.poster = omdbapiModels.movie.poster;
+ },
   (error: HttpErrorResponse) => {this.snackbar.open(`Sorry we can't find this movie ${this.movieTitle}`, `Retry`
   ).onAction().subscribe();
 }
