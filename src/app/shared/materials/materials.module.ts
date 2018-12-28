@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+
 import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {
-  MatButtonModule,
-  MatIconModule,
-  MatListModule,
-  MatProgressBarModule,
-  MatSidenavModule,
-  MatSnackBarModule,
-  MatToolbarModule
-} from '@angular/material';
+
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+
 @NgModule({
-  declarations: [FormBuilder, FormGroup,
-  ],
+  declarations: [ ],
   imports: [
     MatInputModule,
     CommonModule,
@@ -30,9 +30,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     FlexLayoutModule
 
   ],
-  exports: [FormGroup,
+  exports: [
     MatFormFieldModule,
-    FormBuilder,
+
     CommonModule,
     MatProgressBarModule,
     MatButtonModule,
