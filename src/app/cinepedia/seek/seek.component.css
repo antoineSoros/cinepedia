@@ -1,0 +1,31 @@
+.movie-card{
+
+  margin-left: 20%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+
+  border-radius: 8px;
+
+}
+ mat-card-header{
+max-width: fit-content;
+   margin: auto;
+
+}
+ .large-box {
+   font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 16px;
+
+  border-radius: 8px;
+   height:300px;
+   width:300px;
+ }
+

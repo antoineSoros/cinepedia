@@ -1,28 +1,49 @@
 <div style="margin-top: 5%" fxLayout="row" fxLayoutAlign="center center"><input matInput placeholder="enter a movie title" [(ngModel)]="movieTitle" /><button mat-button (click)="onSearch()"><mat-icon>search</mat-icon></button></div>
 <h2 style="margin-top: 5%; font-size: 2em" fxLayout="row" fxLayoutAlign="center center">{{movie.Title}}</h2>
-<mat-tab-group fxLayout="column" fxLayoutAlign="start center">
-  <mat-tab label="The Plot" fxLayoutAlign="center center">{{movie.Plot}}</mat-tab>
-  <mat-tab label="Actors" fxLayoutAlign="center center">{{movie.Actors}}</mat-tab>
-  <mat-tab label="Director" fxLayoutAlign="center center">{{movie.Director}}</mat-tab>
-  <mat-tab label="Awards" fxLayoutAlign="center center">{{movie.Awards}}</mat-tab>
-  <mat-tab label="Genre" fxLayoutAlign="center center">{{movie.Genre}}</mat-tab>
-</mat-tab-group>
+<div fxLayout="row" >
+<div fxFlexOrder="1" >
+  <mat-tab-group >
 
-<mat-card fxlayout="column" fxlayoutalign="space-around center">
-  <mat-card-header  fxLayout="column" fxLayoutAlign="center center">
-    <mat-card-title>{{movie.Title}}</mat-card-title>
-    <mat-card-subtitle>{{movie.Year}}</mat-card-subtitle>
-  </mat-card-header>
-  <img fxFlex="50%" mat-card-image src="{{movie.Poster}}" >
-  <mat-card-content>
+    <mat-tab label="The Plot" >
+      <div class="large-box  mat-elevation-z4">
+      {{movie.Plot}}
+      </div>
+    </mat-tab>
+    <mat-tab label="Actors" >
+      <div class="large-box  mat-elevation-z4">
+      {{movie.Actors}}
+      </div>
+    </mat-tab>
 
-  </mat-card-content>
+    <mat-tab label="Director" >
+      <div class="large-box  mat-elevation-z4">
+      {{movie.Director}}
+      </div>
+    </mat-tab>
+    <mat-tab label="Awards" >
+      <div class="large-box  mat-elevation-z4">
+      {{movie.Awards}}
+      </div>
+    </mat-tab>
+    <mat-tab label="Genre" >
+      <div class="large-box  mat-elevation-z4">
+      {{movie.Genre}}
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
+
+<div fxFlexOrder="2">
+<div class="movie-card  mat-elevation-z4"  >
+
+  <img  mat-card-image src="{{movie.Poster}}" >
+
+</div>
 
 
-
-
-</mat-card>
-
+</div>
+</div>
 
 
 
